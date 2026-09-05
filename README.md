@@ -139,6 +139,9 @@ POST   /api/auth/logout
 ```text
 GET    /api/cities
 GET    /api/cities/:id
+POST   /api/cities
+PUT    /api/cities/:id
+DELETE /api/cities/:id
 ```
 
 ### Places
@@ -249,20 +252,27 @@ Node.js + Express
     MongoDB
 ```
 
-## 👥 Team
+## 👥 Team Members & Contributions
 
-- Ahmed Khaled Elsayed
-- Fatma Ahmed Mohamed
-- Doha Mahmoud Ali
-- Menna Abdallah Abdelaziz
-- Abdelrahman Adel Hamdy
-- Youssef Waleed Abdelkader
-- Ahmed Samy Zaki
-- AbdulRahman Ahmed Hamza
+| Member | Main Contribution |
+|---|---|
+| **Ahmed Khaled Elsayed** | Authentication & Users |
+| **Fatma Ahmed Mohamed** | Cities Management |
+| **Doha Mahmoud Ali** | Places Management |
+| **Menna Abdallah Abdelaziz** | Search & Filter |
+| **Abdelrahman Adel Hamdy** | Favorites |
+| **Youssef Waleed Abdelkader** | Ask an Egyptian |
+| **Ahmed Samy Zaki** | Admin Dashboard & Authorization |
+| **Abdul Rahman Ahmed Hamza** | Frontend Components & UI/UX |
+| **Abdulrahman Hatem** | API Integration, Testing & Documentation |
+
+> Each team member is responsible for understanding, implementing, testing, and contributing to their assigned part of the project. Contributions are tracked through Git and GitHub.
 
 ## 📚 Project Requirements
 
-This project is developed as a Full-Stack project using **Node.js + Express for the Backend, React for the Frontend, and a Database**, with authentication, CRUD operations, search/filtering, responsive UI, and proper API integration.
+This project is developed as a Full-Stack project using **Node.js + Express for the Backend, React for the Frontend, and MongoDB as the Database**, with authentication, CRUD operations, search/filtering, responsive UI, and proper API integration.
+
+The project follows the provided course requirements, including RESTful APIs, validation, centralized error handling, authentication/authorization, protected routes, responsive React UI, database relationships, environment variables, Git/GitHub workflow, API documentation, and ERD/database documentation.
 
 ## 🤖 AI Tools
 
