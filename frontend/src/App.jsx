@@ -1,121 +1,101 @@
 import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import './App.css'
+import SearchFilters from './components/SearchFilters'
+import PlaceResults from './components/PlaceResults'
+
+const samplePlaces = [
+  {
+    id: 1,
+    name: 'Pyramids of Giza',
+    city: 'Cairo',
+    category: 'Historical',
+  },
+  {
+    id: 2,
+    name: 'Egyptian Museum',
+    city: 'Cairo',
+    category: 'Museum',
+  },
+  {
+    id: 3,
+    name: 'Karnak Temple',
+    city: 'Luxor',
+    category: 'Historical',
+  },
+  {
+    id: 4,
+    name: 'Valley of the Kings',
+    city: 'Luxor',
+    category: 'Historical',
+  },
+  {
+    id: 5,
+    name: 'Philae Temple',
+    city: 'Aswan',
+    category: 'Historical',
+  },
+  {
+    id: 6,
+    name: 'Blue Hole',
+    city: 'Dahab',
+    category: 'Nature',
+  },
+  {
+    id: 7,
+    name: 'Naama Bay',
+    city: 'Sharm El-Sheikh',
+    category: 'Beach',
+  },
+  {
+    id: 8,
+    name: 'Giftun Island',
+    city: 'Hurghada',
+    category: 'Beach',
+  },
+]
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [filters, setFilters] = useState({
+    search: '',
+    city: '',
+    category: '',
+    sort: '',
+  })
+
+  let filteredPlaces = samplePlaces.filter((place) => {
+    const matchesSearch = place.name
+      .toLowerCase()
+      .includes(filters.search.toLowerCase())
+
+    const matchesCity =
+      !filters.city || place.city === filters.city
+
+    const matchesCategory =
+      !filters.category || place.category === filters.category
+
+    return matchesSearch && matchesCity && matchesCategory
+  })
+
+  if (filters.sort === 'name-asc') {
+    filteredPlaces = [...filteredPlaces].sort((a, b) =>
+      a.name.localeCompare(b.name)
+    )
+  }
+
+  if (filters.sort === 'name-desc') {
+    filteredPlaces = [...filteredPlaces].sort((a, b) =>
+      b.name.localeCompare(a.name)
+    )
+  }
 
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
+    <main>
+      <h1>Explore Egypt</h1>
+      <p>Discover amazing places across Egypt</p>
 
-      <div className="ticks"></div>
+      <SearchFilters onFiltersChange={setFilters} />
 
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
+      <PlaceResults places={filteredPlaces} />
+    </main>
   )
 }
 
