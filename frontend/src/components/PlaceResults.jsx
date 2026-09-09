@@ -15,10 +15,24 @@ function PlaceResults({ places }) {
       <p>{places.length} place(s) found</p>
 
       {places.map((place) => (
-        <article key={place.id}>
+        <article key={place._id}>
           <h3>{place.name}</h3>
-          <p>City: {place.city}</p>
-          <p>Category: {place.category}</p>
+
+          <p>
+            City: {place.city?.name || 'Unknown city'}
+          </p>
+
+          <p>
+            Category: {place.category}
+          </p>
+
+          {place.description && (
+            <p>{place.description}</p>
+          )}
+
+          {place.rating !== undefined && (
+            <p>Rating: {place.rating} / 5</p>
+          )}
         </article>
       ))}
     </section>

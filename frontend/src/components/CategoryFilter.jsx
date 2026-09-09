@@ -8,11 +8,13 @@ function CategoryFilter({ selectedCategory, onCategoryChange }) {
       <option value="Historical">Historical</option>
       <option value="Museum">Museum</option>
       <option value="Beach">Beach</option>
-      <option value="Restaurant">Restaurant</option>
-      <option value="Hotel">Hotel</option>
-      <option value="Activity">Activity</option>
+      <option value="Nature">Nature</option>
+      <option value="Religious">Religious</option>
+      <option value="Entertainment">Entertainment</option>
+      <option value="Shopping">Shopping</option>
+      <option value="Other">Other</option>
     </select>
-  );
+  )
 }
 
-export default CategoryFilter;
+export default CategoryFilter
