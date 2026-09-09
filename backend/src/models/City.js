@@ -10,7 +10,7 @@ const citySchema = new mongoose.Schema(
     },
     description: {
       type: String,
-      required: [true, "Description is required"],
+      default: "",
     },
     image: {
       type: String,
