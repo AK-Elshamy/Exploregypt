@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Cities from './pages/Cities'
+import Places from './pages/Places'
 
 function App() {
   return (
@@ -19,6 +20,8 @@ function App() {
         />
 
         <Route path="/cities" element={<Cities />} />
+
+        <Route path="/places" element={<Places />} />
       </Routes>
     </BrowserRouter>
   )
