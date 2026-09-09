@@ -29,6 +29,7 @@ function App() {
           search: filters.search,
           city: filters.city,
           category: filters.category,
+          sort: filters.sort,
           limit: 50,
         })
 
@@ -45,17 +46,12 @@ function App() {
     const timer = setTimeout(fetchPlaces, 300)
 
     return () => clearTimeout(timer)
-  }, [filters.search, filters.city, filters.category])
-
-  let displayedPlaces = [...places]
-
-  if (filters.sort === 'name-asc') {
-    displayedPlaces.sort((a, b) => a.name.localeCompare(b.name))
-  }
-
-  if (filters.sort === 'name-desc') {
-    displayedPlaces.sort((a, b) => b.name.localeCompare(a.name))
-  }
+  }, [
+    filters.search,
+    filters.city,
+    filters.category,
+    filters.sort,
+  ])
 
   return (
     <main>
@@ -72,7 +68,7 @@ function App() {
           <p>{error}</p>
         </div>
       ) : (
-        <PlaceResults places={displayedPlaces} />
+        <PlaceResults places={places} />
       )}
     </main>
   )

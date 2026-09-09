@@ -16,6 +16,7 @@ export async function getPlaces(params = {}) {
   if (params.search) query.set('search', params.search)
   if (params.city) query.set('city', params.city)
   if (params.category) query.set('category', params.category)
+  if (params.sort) query.set('sort', params.sort)
   if (params.page) query.set('page', params.page)
   if (params.limit) query.set('limit', params.limit)
 
