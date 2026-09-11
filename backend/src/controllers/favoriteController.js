@@ -1,4 +1,5 @@
 const Favorite = require("../models/Favorite");
+const Place = require("../models/Place");
 
 // Add place to favorites
 const addFavorite = async (req, res) => {
@@ -9,6 +10,13 @@ const addFavorite = async (req, res) => {
     if (!placeId) {
       return res.status(400).json({
         message: "placeId is required",
+      });
+    }
+
+    const place = await Place.findById(placeId);
+    if (!place) {
+      return res.status(404).json({
+        message: "Place not found",
       });
     }
 
