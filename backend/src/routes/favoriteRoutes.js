@@ -6,12 +6,12 @@ const {
   removeFavorite,
 } = require("../controllers/favoriteController");
 
-const authMiddleware = require("../middleware/authMiddleware");
+const { protect } = require("../middleware/authMiddleware");
 
 const router = express.Router();
 
-router.post("/", authMiddleware, addFavorite);
-router.get("/", authMiddleware, getFavorites);
-router.delete("/:placeId", authMiddleware, removeFavorite);
+router.post("/", protect, addFavorite);
+router.get("/", protect, getFavorites);
+router.delete("/:placeId", protect, removeFavorite);
 
 module.exports = router;
