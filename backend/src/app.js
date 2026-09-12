@@ -1,38 +1,24 @@
 const express = require("express");
-const dotenv = require("dotenv");
+const cors = require("cors");
+require("dotenv").config();
 
-dotenv.config();
-
-const connectDB = require("./config/db");
-
-connectDB();
+// Import Routes
+const favoriteRoutes = require("./routes/favoriteRoutes");
+const placeRoutes = require("./routes/placeRoutes");
 
 const app = express();
+
+// Middleware
+app.use(cors());
 app.use(express.json());
 
+// Routes
+app.use("/api/favorites", favoriteRoutes);
+app.use("/api/places", placeRoutes);
+
+// Test route
 app.get("/", (req, res) => {
-  res.status(200).json({ message: "Exploregypt API is running" });
-});
-
-app.use("/api/auth", require("./routes/authRoutes"));
-app.use("/api/cities", require("./routes/cityRoutes"));
-app.use("/api/places", require("./routes/placesRoutes"));
-app.use("/api/favorites", require("./routes/favoritesRoutes"));
-app.use("/api/questions", require("./routes/questionsRoutes"));
-app.use("/api/admin", require("./routes/adminRoutes"));
-
-app.use((req, res) => {
-  res.status(404).json({ message: "Route not found" });
-});
-
-app.use((err, req, res, next) => {
-  console.error(err.stack);
-  res.status(500).json({ message: "Something went wrong", error: err.message });
-});
-
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+  res.json({ message: "Exploregypt API is running" });
 });
 
 module.exports = app;
