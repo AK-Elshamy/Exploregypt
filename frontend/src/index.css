@@ -1,24 +1,17 @@
-/* Reset & Base */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f3f4f6;
-  color: #1f2937;
-  min-height: 100vh;
-}
-
+/* Favorites Page Layout */
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1rem;
 }
 
-/* Loading */
+.page-title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+/* Loading / Error / Empty States */
 .loading {
   display: flex;
   justify-content: center;
@@ -28,7 +21,6 @@ body {
   color: #6b7280;
 }
 
-/* Error */
 .error {
   text-align: center;
   padding: 2.5rem 0;
@@ -53,7 +45,6 @@ body {
   background-color: #2563eb;
 }
 
-/* Empty State */
 .empty {
   text-align: center;
   padding: 4rem 0;
@@ -68,13 +59,6 @@ body {
 .empty p {
   color: #6b7280;
   margin-top: 0.5rem;
-}
-
-/* Page Title */
-.page-title {
-  font-size: 1.875rem;
-  font-weight: 700;
-  margin-bottom: 1.5rem;
 }
 
 /* Favorites Grid */
@@ -161,7 +145,7 @@ body {
 
 /* Heart Button */
 .heart-btn {
-  position: relative;
+  position: absolute;
   top: 10px;
   right: 10px;
   width: 40px;
