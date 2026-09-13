@@ -3,22 +3,37 @@ import HeartButton from './HeartButton';
 
 export default function PlaceCard({ place }) {
   return (
-    <Link to={`/places/${place._id}`} className="card">
+    <article className="place-card">
       <div className="card-img">
-        <img src={place.image} alt={place.name} loading="lazy" />
+        <img
+          src={place.image}
+          alt={place.name}
+          className="place-card-image"
+          loading="lazy"
+        />
         <HeartButton placeId={place._id} />
       </div>
-      <div className="card-body">
+
+      <div className="place-card-content">
+        <span className="place-category">{place.category}</span>
+
         <h3>{place.name}</h3>
-        <p>{place.description}</p>
-        <div className="card-meta">
-          <span className="badge">{place.category}</span>
-          {place.city?.name && (
-            <span className="badge badge-secondary">{place.city.name}</span>
-          )}
-          <span>⭐ {place.rating}</span>
-        </div>
+
+        {place.city?.name && (
+          <p className="place-city">{place.city.name}</p>
+        )}
+
+        <p className="place-description">
+          {place.description}
+        </p>
+
+        <Link
+          to={`/places/${place._id}`}
+          className="place-button"
+        >
+          View Details
+        </Link>
       </div>
-    </Link>
+    </article>
   );
 }

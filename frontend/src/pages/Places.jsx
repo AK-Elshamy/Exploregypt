@@ -2,7 +2,16 @@ import { useEffect, useState } from 'react';
 import { getPlaces, getCities } from '../services/api';
 import PlaceCard from '../components/PlaceCard';
 
-const CATEGORIES = ['Historical', 'Museum', 'Beach', 'Nature', 'Religious', 'Entertainment', 'Shopping', 'Other'];
+const CATEGORIES = [
+  'Historical',
+  'Museum',
+  'Beach',
+  'Nature',
+  'Religious',
+  'Entertainment',
+  'Shopping',
+  'Other',
+];
 
 export default function Places() {
   const [places, setPlaces] = useState([]);
@@ -15,7 +24,9 @@ export default function Places() {
 
   const fetchPlaces = () => {
     setLoading(true);
+
     const params = { limit: 50 };
+
     if (search) params.search = search;
     if (city) params.city = city;
     if (category) params.category = category;
@@ -30,11 +41,14 @@ export default function Places() {
   };
 
   useEffect(() => {
-    getCities().then((res) => setCities(res.data.data || [])).catch(console.error);
+    getCities()
+      .then((res) => setCities(res.data.data || []))
+      .catch(console.error);
   }, []);
 
   useEffect(() => {
     const timer = setTimeout(fetchPlaces, 300);
+
     return () => clearTimeout(timer);
   }, [search, city, category]);
 
@@ -53,16 +67,26 @@ export default function Places() {
             value={search}
             onChange={(e) => setSearch(e.target.value)}
           />
-          <select value={city} onChange={(e) => setCity(e.target.value)}>
+
+          <select
+            value={city}
+            onChange={(e) => setCity(e.target.value)}
+          >
             <option value="">All Cities</option>
+
             {cities.map((c) => (
               <option key={c._id} value={c.name}>
                 {c.name}
               </option>
             ))}
           </select>
-          <select value={category} onChange={(e) => setCategory(e.target.value)}>
+
+          <select
+            value={category}
+            onChange={(e) => setCategory(e.target.value)}
+          >
             <option value="">All Categories</option>
+
             {CATEGORIES.map((cat) => (
               <option key={cat} value={cat}>
                 {cat}
@@ -72,15 +96,25 @@ export default function Places() {
         </div>
 
         {loading ? (
-          <div className="loading"><div className="spinner"></div></div>
+          <div className="loading">
+            <div className="spinner"></div>
+          </div>
         ) : places.length === 0 ? (
-          <div className="empty">No places found matching your filters.</div>
+          <div className="empty">
+            No places found matching your filters.
+          </div>
         ) : (
           <>
-            <p style={{ marginBottom: '1rem', color: 'var(--gray)' }}>{total} places found</p>
+            <p style={{ marginBottom: '1rem', color: 'var(--gray)' }}>
+              {total} places found
+            </p>
+
             <div className="grid grid-3">
               {places.map((place) => (
-                <PlaceCard key={place._id} place={place} />
+                <PlaceCard
+                  key={place._id}
+                  place={place}
+                />
               ))}
             </div>
           </>

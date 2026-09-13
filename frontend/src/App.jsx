@@ -1,7 +1,11 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { useCallback, useEffect, useState } from 'react';
 
+import Navbar from './components/Navbar';
+import Cities from './pages/Cities';
+import Places from './pages/Places';
 import Favorites from './pages/Favorites';
+
 import SearchFilters from './components/SearchFilters';
 import PlaceResults from './components/PlaceResults';
 
@@ -61,7 +65,7 @@ function Home() {
 
   return (
     <main>
-      <h1>Explore Egypt</h1>
+      <h1>Explore Egypt 🇪🇬</h1>
       <p>Discover amazing places across Egypt</p>
 
       <SearchFilters onFiltersChange={handleFiltersChange} />
@@ -83,8 +87,12 @@ function Home() {
 function App() {
   return (
     <BrowserRouter>
+      <Navbar />
+
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/cities" element={<Cities />} />
+        <Route path="/places" element={<Places />} />
         <Route path="/favorites" element={<Favorites />} />
       </Routes>
     </BrowserRouter>
