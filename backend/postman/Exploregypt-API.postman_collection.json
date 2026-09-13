@@ -1,0 +1,46 @@
+{
+  "info": {
+    "name": "Exploregypt API",
+    "description": "Basic API integration and smoke-test collection for the Exploregypt backend.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "baseUrl", "value": "http://localhost:5000" },
+    { "key": "token", "value": "" }
+  ],
+  "item": [
+    {
+      "name": "Health Check",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": { "raw": "{{baseUrl}}/", "host": ["{{baseUrl}}"], "path": [""] }
+      }
+    },
+    {
+      "name": "Auth",
+      "item": [
+        {"name":"Register","request":{"method":"POST","header":[{"key":"Content-Type","value":"application/json"}],"body":{"mode":"raw","raw":"{\n  \"name\": \"Ahmed\",\n  \"email\": \"ahmed@example.com\",\n  \"password\": \"secret123\"\n}"},"url":{"raw":"{{baseUrl}}/api/auth/register","host":["{{baseUrl}}"],"path":["api","auth","register"]}}},
+        {"name":"Login","request":{"method":"POST","header":[{"key":"Content-Type","value":"application/json"}],"body":{"mode":"raw","raw":"{\n  \"email\": \"ahmed@example.com\",\n  \"password\": \"secret123\"\n}"},"url":{"raw":"{{baseUrl}}/api/auth/login","host":["{{baseUrl}}"],"path":["api","auth","login"]}}},
+        {"name":"Current User","request":{"method":"GET","header":[{"key":"Authorization","value":"Bearer {{token}}"}],"url":{"raw":"{{baseUrl}}/api/auth/me","host":["{{baseUrl}}"],"path":["api","auth","me"]}}},
+        {"name":"Update Current User","request":{"method":"PUT","header":[{"key":"Content-Type","value":"application/json"},{"key":"Authorization","value":"Bearer {{token}}"}],"body":{"mode":"raw","raw":"{\n  \"name\": \"Ahmed Khaled\"\n}"},"url":{"raw":"{{baseUrl}}/api/auth/me","host":["{{baseUrl}}"],"path":["api","auth","me"]}}},
+        {"name":"Logout","request":{"method":"POST","header":[{"key":"Authorization","value":"Bearer {{token}}"}],"url":{"raw":"{{baseUrl}}/api/auth/logout","host":["{{baseUrl}}"],"path":["api","auth","logout"]}}}
+      ]
+    },
+    {
+      "name": "Cities",
+      "item": [
+        {"name":"Get Cities","request":{"method":"GET","url":{"raw":"{{baseUrl}}/api/cities","host":["{{baseUrl}}"],"path":["api","cities"]}}},
+        {"name":"Get City By ID","request":{"method":"GET","url":{"raw":"{{baseUrl}}/api/cities/:id","host":["{{baseUrl}}"],"path":["api","cities",":id"]}}}
+      ]
+    },
+    {
+      "name": "Places",
+      "item": [
+        {"name":"Get Places","request":{"method":"GET","url":{"raw":"{{baseUrl}}/api/places","host":["{{baseUrl}}"],"path":["api","places"]}}},
+        {"name":"Get Place By ID","request":{"method":"GET","url":{"raw":"{{baseUrl}}/api/places/:id","host":["{{baseUrl}}"],"path":["api","places",":id"]}}}
+      ]
+    },
+    {"name":"Admin Dashboard","request":{"method":"GET","header":[{"key":"Authorization","value":"Bearer {{token}}"}],"url":{"raw":"{{baseUrl}}/api/admin/dashboard","host":["{{baseUrl}}"],"path":["api","admin","dashboard"]}}}
+  ]
+}
