@@ -1,35 +1,30 @@
-import React, { useState, useEffect } from 'react';
-import { addFavorite, removeFavorite, getFavorites } from '../services/favoriteService';
+import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { addFavorite, getFavorites, removeFavorite } from '../services/api';
+import { useAuth } from '../context/AuthContext';
 
-const HeartButton = ({ placeId }) => {
+export default function HeartButton({ placeId }) {
+  const { isAuthenticated } = useAuth();
+  const navigate = useNavigate();
   const [isFavorite, setIsFavorite] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  // Check if place is in favorites
   useEffect(() => {
-    const checkFavorite = async () => {
-      try {
-        const favorites = await getFavorites();
-        const exists = favorites.some(fav => 
-          (fav.placeId?._id || fav.placeId) === placeId
-        );
-        setIsFavorite(exists);
-      } catch (error) {
-        // Silent fail - مش مسجل دخول
-      }
-    };
+    if (!isAuthenticated || !placeId) return;
+    getFavorites()
+      .then((favorites) => setIsFavorite(favorites.some((fav) => (fav.placeId?._id || fav.placeId) === placeId)))
+      .catch(() => {});
+  }, [isAuthenticated, placeId]);
 
-    if (placeId) {
-      checkFavorite();
+  const handleToggle = async (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    if (!isAuthenticated) {
+      navigate('/login');
+      return;
     }
-  }, [placeId]);
-
-  const handleToggle = async (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-
-    setLoading(true);
     try {
+      setLoading(true);
       if (isFavorite) {
         await removeFavorite(placeId);
         setIsFavorite(false);
@@ -38,22 +33,11 @@ const HeartButton = ({ placeId }) => {
         setIsFavorite(true);
       }
     } catch (error) {
-      alert(error.response?.data?.message || 'Failed to update favorites');
+      console.error(error);
     } finally {
       setLoading(false);
     }
   };
 
-  return (
-    <button
-      onClick={handleToggle}
-      disabled={loading}
-      className="heart-btn"
-      title={isFavorite ? 'Remove from favorites' : 'Add to favorites'}
-    >
-      {isFavorite ? '❤️' : '🤍'}
-    </button>
-  );
-};
-
-export default HeartButton;
+  return <button className="heart-btn" onClick={handleToggle} disabled={loading} title={isAuthenticated ? (isFavorite ? 'Remove from favorites' : 'Add to favorites') : 'Login to add favorites'}>{isFavorite ? '❤️' : '🤍'}</button>;
+}

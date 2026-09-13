@@ -1,115 +1,167 @@
 import { useEffect, useState } from 'react';
-import { getPlaces, getCities } from '../services/api';
+import { getPlaces } from '../services/api';
 import PlaceCard from '../components/PlaceCard';
 
 const CATEGORIES = [
-  'Historical',
-  'Museum',
-  'Beach',
-  'Nature',
-  'Religious',
-  'Entertainment',
-  'Shopping',
-  'Other',
+  { value: '', label: 'All', icon: '✨' },
+  { value: 'Restaurant', label: 'Restaurants', icon: '🍴' },
+  { value: 'Hotel', label: 'Hotels', icon: '🏨' },
+  { value: 'Shopping', label: 'Shopping', icon: '🛍️' },
+  { value: 'Beach', label: 'Beaches', icon: '🏖️' },
 ];
 
 export default function Places() {
   const [places, setPlaces] = useState([]);
-  const [cities, setCities] = useState([]);
   const [search, setSearch] = useState('');
-  const [city, setCity] = useState('');
   const [category, setCategory] = useState('');
   const [loading, setLoading] = useState(true);
-  const [total, setTotal] = useState(0);
-
-  const fetchPlaces = () => {
-    setLoading(true);
-
-    const params = { limit: 50 };
-
-    if (search) params.search = search;
-    if (city) params.city = city;
-    if (category) params.category = category;
-
-    getPlaces(params)
-      .then((res) => {
-        setPlaces(res.data.data || []);
-        setTotal(res.data.total || 0);
-      })
-      .catch(console.error)
-      .finally(() => setLoading(false));
-  };
 
   useEffect(() => {
-    getCities()
-      .then((res) => setCities(res.data.data || []))
-      .catch(console.error);
-  }, []);
+    const fetchPlaces = async () => {
+      try {
+        setLoading(true);
 
-  useEffect(() => {
+        const params = {
+          limit: 50,
+        };
+
+        if (search.trim()) {
+          params.search = search.trim();
+        }
+
+        if (category) {
+          params.category = category;
+        }
+
+        const data = await getPlaces(params);
+
+        setPlaces(data.data || []);
+      } catch (error) {
+        console.error('Failed to load places:', error);
+        setPlaces([]);
+      } finally {
+        setLoading(false);
+      }
+    };
+
     const timer = setTimeout(fetchPlaces, 300);
 
     return () => clearTimeout(timer);
-  }, [search, city, category]);
+  }, [search, category]);
 
   return (
-    <section className="section">
-      <div className="container">
-        <div className="section-title">
-          <h2>Tourist Places</h2>
-          <p>Search and filter attractions across Egypt</p>
+    <main className="places-page">
+
+      {/* Hero */}
+      <section className="places-hero">
+        <div className="container">
+          <span className="eyebrow">EXPLORE EGYPT</span>
+
+          <h1>
+            Find your next
+            <span> adventure.</span>
+          </h1>
+
+          <p>
+            Discover the best restaurants, hotels, shopping destinations
+            and beaches across Egypt.
+          </p>
         </div>
+      </section>
 
-        <div className="filter-bar">
-          <input
-            type="text"
-            placeholder="Search by name..."
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-          />
+      <section className="places-content">
+        <div className="container">
 
-          <select
-            value={city}
-            onChange={(e) => setCity(e.target.value)}
-          >
-            <option value="">All Cities</option>
+          {/* Search */}
+          <div className="places-search">
+            <span className="search-icon">⌕</span>
 
-            {cities.map((c) => (
-              <option key={c._id} value={c.name}>
-                {c.name}
-              </option>
-            ))}
-          </select>
+            <input
+              type="text"
+              placeholder="Search places..."
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+            />
 
-          <select
-            value={category}
-            onChange={(e) => setCategory(e.target.value)}
-          >
-            <option value="">All Categories</option>
-
-            {CATEGORIES.map((cat) => (
-              <option key={cat} value={cat}>
-                {cat}
-              </option>
-            ))}
-          </select>
-        </div>
-
-        {loading ? (
-          <div className="loading">
-            <div className="spinner"></div>
+            {search && (
+              <button
+                className="clear-search"
+                onClick={() => setSearch('')}
+              >
+                ×
+              </button>
+            )}
           </div>
-        ) : places.length === 0 ? (
-          <div className="empty">
-            No places found matching your filters.
-          </div>
-        ) : (
-          <>
-            <p style={{ marginBottom: '1rem', color: 'var(--gray)' }}>
-              {total} places found
-            </p>
 
-            <div className="grid grid-3">
+          {/* Categories */}
+          <div className="category-filter">
+            {CATEGORIES.map((item) => (
+              <button
+                key={item.value}
+                className={`category-chip ${
+                  category === item.value ? 'active' : ''
+                }`}
+                onClick={() => setCategory(item.value)}
+              >
+                <span>{item.icon}</span>
+                {item.label}
+              </button>
+            ))}
+          </div>
+
+          {/* Results Header */}
+          {!loading && (
+            <div className="places-header">
+              <div>
+                <h2>
+                  {category
+                    ? `${category}s`
+                    : 'All Places'}
+                </h2>
+
+                <p>
+                  {places.length} places found
+                </p>
+              </div>
+            </div>
+          )}
+
+          {/* Loading */}
+          {loading ? (
+            <div className="places-grid">
+              {[1, 2, 3, 4, 5, 6].map((item) => (
+                <div className="place-skeleton" key={item}>
+                  <div className="skeleton-image"></div>
+
+                  <div className="skeleton-content">
+                    <div className="skeleton-line small"></div>
+                    <div className="skeleton-line"></div>
+                    <div className="skeleton-line medium"></div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          ) : places.length === 0 ? (
+            <div className="places-empty">
+              <div className="empty-icon">🔎</div>
+
+              <h3>No places found</h3>
+
+              <p>
+                Try another search or choose a different category.
+              </p>
+
+              <button
+                onClick={() => {
+                  setSearch('');
+                  setCategory('');
+                }}
+              >
+                Clear filters
+              </button>
+            </div>
+          ) : (
+            <div className="places-grid">
               {places.map((place) => (
                 <PlaceCard
                   key={place._id}
@@ -117,9 +169,11 @@ export default function Places() {
                 />
               ))}
             </div>
-          </>
-        )}
-      </div>
-    </section>
+          )}
+
+        </div>
+      </section>
+
+    </main>
   );
 }

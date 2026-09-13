@@ -1,40 +1,31 @@
-import CityCard from '../components/CityCard'
+import { useEffect, useState } from 'react';
+import CityCard from '../components/CityCard';
+import { getCities } from '../services/api';
 
-function Cities() {
-  const cities = [
-    {
-      name: 'Cairo',
-      description: 'Discover the capital of Egypt',
-      image: 'https://images.unsplash.com/photo-1572252009286-268acec5ca0a',
-    },
-    {
-      name: 'Luxor',
-      description: 'Explore ancient Egyptian history',
-      image: 'https://images.unsplash.com/photo-1568322445389-f64ac2515020',
-    },
-    {
-      name: 'Aswan',
-      description: 'Enjoy the beauty of the Nile',
-      image: 'https://images.unsplash.com/photo-1568322445389-f64ac2515020',
-    },
-  ]
+export default function Cities() {
+  const [cities, setCities] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState('');
+
+  useEffect(() => {
+    getCities()
+      .then((data) => setCities(data.data || []))
+      .catch((err) => {
+        console.error(err);
+        setError('Unable to load cities. Please try again.');
+      })
+      .finally(() => setLoading(false));
+  }, []);
 
   return (
-    <main>
-      <h1>Explore Egyptian Cities</h1>
-
-      <div className="cities-container">
-        {cities.map((city) => (
-          <CityCard
-            key={city.name}
-            name={city.name}
-            description={city.description}
-            image={city.image}
-          />
-        ))}
+    <main className="section page-shell">
+      <div className="container">
+        <div className="section-title"><h1>Explore Egyptian Cities</h1><p>Discover destinations across Egypt.</p></div>
+        {loading ? <div className="loading"><div className="loading-spinner" /><p>Loading cities...</p></div> :
+          error ? <div className="error-message"><p>{error}</p></div> :
+          cities.length === 0 ? <div className="empty-state"><p>No cities available yet.</p></div> :
+          <div className="grid grid-3">{cities.map((city) => <CityCard key={city._id} city={city} />)}</div>}
       </div>
     </main>
-  )
+  );
 }
-
-export default Cities
