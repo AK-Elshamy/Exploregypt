@@ -1224,3 +1224,1316 @@ a { color: inherit; }
     height: 220px;
   }
 }
+
+/* =========================================
+   HOME PAGE - ISOLATED LANDING PAGE
+   ========================================= */
+
+.home-page {
+  width: 100%;
+  padding: 0 !important;
+  margin: 0;
+  text-align: left !important;
+  background: #f7f9fc;
+  overflow: hidden;
+}
+
+.home-page .container {
+  width: min(1180px, 92%);
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.home-hero {
+  position: relative;
+  min-height: 680px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+.home-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(7,18,32,.82) 0%, rgba(7,18,32,.55) 45%, rgba(7,18,32,.18) 100%);
+  z-index: 0;
+}
+
+.home-hero-overlay {
+  display: none;
+}
+
+.home-hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 100px 0;
+  color: #fff;
+}
+
+.home-eyebrow {
+  margin: 0 0 16px;
+  color: #8fc3ff !important;
+  font-size: 12px !important;
+  font-weight: 800;
+  letter-spacing: 2.5px;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+.home-eyebrow-dark {
+  color: #1677ff !important;
+}
+
+.home-hero h1 {
+  max-width: 760px;
+  margin: 0;
+  color: #fff !important;
+  font-size: clamp(48px, 7vw, 82px) !important;
+  line-height: 1.02;
+  font-weight: 800;
+  letter-spacing: -3px;
+}
+
+.home-hero h1 span {
+  display: block;
+  color: #8fc3ff;
+}
+
+.home-hero-text {
+  max-width: 650px;
+  margin: 24px 0 0 !important;
+  color: rgba(255,255,255,.88) !important;
+  font-size: 18px !important;
+  line-height: 1.75;
+}
+
+.home-hero-actions,
+.home-final-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 32px;
+}
+
+.home-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-height: 48px;
+  padding: 12px 22px;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform .2s ease, background .2s ease, box-shadow .2s ease;
+}
+
+.home-btn:hover {
+  transform: translateY(-2px);
+}
+
+.home-btn-primary {
+  background: #1677ff;
+  color: #fff !important;
+  box-shadow: 0 10px 25px rgba(22,119,255,.25);
+}
+
+.home-btn-primary:hover {
+  background: #0868eb;
+}
+
+.home-btn-light {
+  background: rgba(255,255,255,.12);
+  border-color: rgba(255,255,255,.55);
+  color: #fff !important;
+  backdrop-filter: blur(8px);
+}
+
+.home-btn-light:hover {
+  background: rgba(255,255,255,.22);
+}
+
+.home-btn-outline {
+  border-color: #1677ff;
+  background: #fff;
+  color: #1677ff !important;
+}
+
+.home-hero-note {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 38px;
+  color: rgba(255,255,255,.72);
+  font-size: 13px;
+}
+
+.home-hero-note span {
+  color: #8fc3ff;
+}
+
+.home-intro,
+.home-era-section {
+  padding: 100px 0;
+  background: #f7f9fc;
+}
+
+.home-section-heading {
+  max-width: 720px;
+  margin: 0 auto 48px;
+  text-align: center;
+}
+
+.home-section-heading h2 {
+  margin: 0;
+  color: #172033;
+  font-size: clamp(32px, 4vw, 48px);
+  line-height: 1.1;
+  letter-spacing: -1.5px;
+}
+
+.home-section-heading > p:not(.home-eyebrow) {
+  margin: 18px auto 0;
+  color: #667085 !important;
+  font-size: 16px !important;
+  line-height: 1.75;
+}
+
+.home-feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.home-feature-card {
+  padding: 32px;
+  background: #fff;
+  border: 1px solid #e6eaf0;
+  border-radius: 18px;
+  box-shadow: 0 8px 28px rgba(20,30,50,.05);
+  text-align: left;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.home-feature-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 18px 40px rgba(20,30,50,.11);
+}
+
+.home-feature-icon {
+  width: 58px;
+  height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 22px;
+  border-radius: 15px;
+  background: #eef5ff;
+  font-size: 25px;
+}
+
+.home-feature-card h3 {
+  margin: 0 0 9px;
+  color: #172033;
+  font-size: 20px;
+}
+
+.home-feature-card p {
+  margin: 0;
+  color: #667085 !important;
+  font-size: 14px !important;
+  line-height: 1.7;
+}
+
+.home-image-story,
+.home-red-sea {
+  position: relative;
+  min-height: 570px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.home-image-story > img,
+.home-red-sea > img {
+  position: absolute;
+  inset: 0;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  object-fit: cover !important;
+  display: block;
+}
+
+.home-story-overlay,
+.home-red-sea-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(90deg, rgba(8,20,35,.82), rgba(8,20,35,.22));
+}
+
+.home-story-content,
+.home-red-sea-content {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  text-align: left;
+}
+
+.home-story-content h2,
+.home-red-sea-content h2 {
+  max-width: 680px;
+  margin: 0;
+  color: #fff !important;
+  font-size: clamp(42px, 6vw, 70px) !important;
+  line-height: 1;
+  letter-spacing: -2px;
+}
+
+.home-story-content > p:not(.home-eyebrow),
+.home-red-sea-content > p:not(.home-eyebrow) {
+  max-width: 590px;
+  margin: 22px 0 0 !important;
+  color: rgba(255,255,255,.88) !important;
+  font-size: 17px !important;
+  line-height: 1.75;
+}
+
+.home-story-link {
+  display: inline-flex;
+  gap: 9px;
+  margin-top: 28px;
+  color: #fff !important;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.home-story-link:hover {
+  color: #8fc3ff !important;
+}
+
+.home-era-section {
+  background: #fff;
+}
+
+.home-era-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.home-era-card {
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid #e7ecf3;
+  border-radius: 20px;
+  box-shadow: 0 8px 28px rgba(20,30,50,.06);
+}
+
+.home-era-card > img {
+  width: 100% !important;
+  height: 500px !important;
+  max-width: none !important;
+  display: block;
+  object-fit: cover !important;
+  transition: transform .5s ease;
+}
+
+.home-era-card:hover > img {
+  transform: scale(1.04);
+}
+
+.home-era-content {
+  padding: 28px;
+  text-align: left;
+}
+
+.home-era-content > span {
+  color: #1677ff;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.home-era-content h3 {
+  margin: 10px 0 9px;
+  color: #172033;
+  font-size: 24px;
+}
+
+.home-era-content p {
+  margin: 0;
+  color: #667085 !important;
+  font-size: 14px !important;
+  line-height: 1.7;
+}
+
+.home-era-content a {
+  display: inline-flex;
+  margin-top: 20px;
+  color: #1677ff !important;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.home-red-sea {
+  min-height: 620px;
+}
+
+.home-red-sea-content .home-btn {
+  margin-top: 30px;
+}
+
+.home-final-cta {
+  padding: 110px 0;
+  background: #f7f9fc;
+  text-align: center;
+}
+
+.home-final-cta h2 {
+  margin: 0;
+  color: #172033;
+  font-size: clamp(36px, 5vw, 58px);
+  line-height: 1.05;
+  letter-spacing: -2px;
+}
+
+.home-final-cta > .container > p:not(.home-eyebrow) {
+  max-width: 600px;
+  margin: 18px auto 0;
+  color: #667085 !important;
+  font-size: 16px !important;
+  line-height: 1.7;
+}
+
+.home-final-actions {
+  justify-content: center;
+}
+
+@media (max-width: 900px) {
+  .home-hero {
+    min-height: 620px;
+  }
+
+  .home-feature-grid,
+  .home-era-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .home-intro,
+  .home-era-section {
+    padding: 75px 0;
+  }
+
+  .home-image-story,
+  .home-red-sea {
+    min-height: 520px;
+  }
+}
+
+@media (max-width: 600px) {
+  .home-hero {
+    min-height: calc(100vh - 70px);
+  }
+
+  .home-hero-content {
+    padding: 70px 0;
+  }
+
+  .home-hero h1 {
+    font-size: 48px !important;
+    letter-spacing: -2px;
+  }
+
+  .home-hero-text {
+    font-size: 16px !important;
+  }
+
+  .home-feature-card {
+    padding: 25px;
+  }
+
+  .home-image-story,
+  .home-red-sea {
+    min-height: 500px;
+  }
+
+  .home-story-overlay,
+  .home-red-sea-overlay {
+    background: linear-gradient(90deg, rgba(8,20,35,.84), rgba(8,20,35,.38));
+  }
+
+  .home-era-card > img {
+    height: 240px !important;
+  }
+
+  .home-final-cta {
+    padding: 80px 0;
+  }
+}
+
+/* =========================================
+   GLOBAL EXPLOREGYPT COLOR SYSTEM
+   ========================================= */
+:root {
+  --eg-navy: #172033;
+  --eg-blue: #1677ff;
+  --eg-blue-dark: #0d63dc;
+  --eg-sky: #eaf3ff;
+  --eg-sand: #f4e8cf;
+  --eg-gold: #c99a3d;
+  --eg-bg: #f3f6fa;
+  --eg-surface: #ffffff;
+  --eg-text: #172033;
+  --eg-muted: #667085;
+  --eg-border: #e2e8f0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--eg-bg) !important;
+  color: var(--eg-text) !important;
+}
+
+/* Keep the navbar clean but connected to the blue/navy theme */
+.navbar {
+  background: rgba(255, 255, 255, 0.96) !important;
+  border-bottom: 1px solid var(--eg-border);
+  box-shadow: 0 4px 18px rgba(23, 32, 51, 0.07) !important;
+}
+
+.logo {
+  color: var(--eg-blue) !important;
+}
+
+.nav-links a {
+  color: #475467 !important;
+  transition: color .2s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--eg-blue) !important;
+}
+
+/* Make normal page backgrounds consistent */
+.page-shell,
+.places-page {
+  background: var(--eg-bg) !important;
+}
+
+/* Cities */
+.cities-container {
+  padding-top: 25px;
+  padding-bottom: 70px;
+}
+
+.city-card {
+  border: 1px solid var(--eg-border);
+  box-shadow: 0 8px 25px rgba(23, 32, 51, .08) !important;
+}
+
+.city-card-content h3,
+.page-title {
+  color: var(--eg-navy);
+}
+
+.city-card-content a {
+  background: var(--eg-blue) !important;
+}
+
+.city-card-content a:hover {
+  background: var(--eg-blue-dark) !important;
+}
+
+/* Places hero: introduce a very light Egypt-inspired blue/sand tint */
+.places-hero {
+  background:
+    radial-gradient(circle at 8% 20%, rgba(22, 119, 255, .10), transparent 30%),
+    radial-gradient(circle at 92% 25%, rgba(201, 154, 61, .10), transparent 30%),
+    linear-gradient(180deg, #ffffff 0%, #f8fbff 100%) !important;
+}
+
+.places-content {
+  background: var(--eg-bg);
+}
+
+.category-chip.active {
+  background: var(--eg-blue) !important;
+  border-color: var(--eg-blue) !important;
+}
+
+.place-card {
+  border-color: var(--eg-border) !important;
+  box-shadow: 0 8px 25px rgba(23, 32, 51, .07) !important;
+}
+
+.place-card:hover {
+  border-color: #cfe1ff !important;
+  box-shadow: 0 18px 40px rgba(23, 32, 51, .13) !important;
+}
+
+.place-category {
+  background: var(--eg-sky) !important;
+  color: var(--eg-blue) !important;
+}
+
+.place-button {
+  background: var(--eg-navy) !important;
+}
+
+.place-button:hover {
+  background: var(--eg-blue) !important;
+}
+
+/* Detail pages */
+.detail-card,
+.place-details,
+.favorite-card {
+  border: 1px solid var(--eg-border);
+  box-shadow: 0 10px 30px rgba(23, 32, 51, .08) !important;
+}
+
+.detail-info-grid > div {
+  background: #eef5ff !important;
+}
+
+.shared-button,
+.btn-primary {
+  background: var(--eg-blue) !important;
+}
+
+.shared-button:hover,
+.btn-primary:hover {
+  background: var(--eg-blue-dark) !important;
+}
+
+/* Favorites */
+.favorite-card .btn-remove {
+  background: #dc4c4c;
+}
+
+/* =========================================
+   HOME — SAME BRAND, MORE VISUAL CONTRAST
+   ========================================= */
+.home-page {
+  background: var(--eg-bg) !important;
+}
+
+.home-intro,
+.home-era-section {
+  background:
+    linear-gradient(180deg, #f3f7fc 0%, #eef4fa 100%) !important;
+}
+
+.home-feature-card {
+  background: #ffffff !important;
+  border-color: #dfe7f1 !important;
+}
+
+.home-feature-card:nth-child(2) .home-feature-icon {
+  background: #e8f7f8;
+}
+
+.home-feature-card:nth-child(3) .home-feature-icon {
+  background: #fff5df;
+}
+
+.home-feature-card:hover {
+  border-color: #cfe1ff !important;
+}
+
+.home-era-card {
+  background: #ffffff !important;
+  border: 1px solid var(--eg-border);
+  box-shadow: 0 10px 30px rgba(23, 32, 51, .08);
+}
+
+.home-final-cta {
+  background:
+    radial-gradient(circle at 10% 50%, rgba(22,119,255,.16), transparent 30%),
+    radial-gradient(circle at 90% 50%, rgba(201,154,61,.13), transparent 30%),
+    var(--eg-navy) !important;
+}
+
+.home-final-cta h2,
+.home-final-cta p {
+  color: #ffffff;
+}
+
+/* Better mobile contrast */
+@media (max-width: 600px) {
+  .navbar {
+    background: #ffffff !important;
+  }
+}
+
+/* =========================================================
+   EXPLOREGYPT — DARK MODE
+   Full black page
+   Images stay completely unchanged
+   ========================================================= */
+
+/* =========================
+   GLOBAL
+   ========================= */
+
+html:has(body.dim-mode) {
+  background: #000000;
+}
+
+body.dim-mode {
+  background: #000000 !important;
+  color: #f5f5f5;
+}
+
+body.dim-mode #root {
+  min-height: 100vh;
+  background: #000000;
+}
+
+
+/* =========================
+   NAVBAR
+   ========================= */
+
+body.dim-mode .navbar {
+  background: #000000;
+  border-bottom: 1px solid #2a2a2a;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+}
+
+body.dim-mode .logo {
+  color: #1677ff;
+}
+
+body.dim-mode .nav-links a {
+  color: #d0d0d0;
+}
+
+body.dim-mode .nav-links a:hover,
+body.dim-mode .nav-links a.active {
+  color: #1677ff;
+}
+
+body.dim-mode .nav-user {
+  color: #888888;
+}
+
+body.dim-mode .nav-button {
+  color: #ff4d5a;
+}
+
+
+/* =========================
+   DARK MODE BUTTON
+   ========================= */
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+
+  min-height: 34px;
+  padding: 6px 11px;
+  margin-left: 2px;
+
+  border: 1px solid #d9e0e8;
+  border-radius: 999px;
+
+  background: #ffffff;
+  color: #172033;
+
+  font: inherit;
+  font-size: 13px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.theme-toggle:hover {
+  background: #eef5ff;
+  border-color: #b9d5ff;
+  transform: translateY(-1px);
+}
+
+.theme-toggle-icon {
+  font-size: 15px;
+  line-height: 1;
+}
+
+.theme-toggle-text {
+  line-height: 1;
+}
+
+
+/* Dark button */
+
+body.dim-mode .theme-toggle {
+  background: #1a1a1a;
+  border-color: #333333;
+  color: #eeeeee;
+}
+
+body.dim-mode .theme-toggle:hover {
+  background: #252525;
+  border-color: #444444;
+}
+
+
+/* =========================
+   ALL PAGE BACKGROUNDS
+   ========================= */
+
+body.dim-mode main,
+body.dim-mode .page-shell,
+body.dim-mode .places-page,
+body.dim-mode .home-page,
+body.dim-mode .favorites-page {
+  background: #000000 !important;
+  color: #f5f5f5;
+}
+
+
+/* =========================
+   HEADINGS
+   ========================= */
+
+body.dim-mode h1,
+body.dim-mode h2,
+body.dim-mode h3,
+body.dim-mode h4,
+body.dim-mode h5,
+body.dim-mode h6 {
+  color: #f5f5f5;
+}
+
+body.dim-mode p {
+  color: #a0a0a0;
+}
+
+
+/* =========================
+   CARDS
+   ========================= */
+
+body.dim-mode .place-card,
+body.dim-mode .favorite-card,
+body.dim-mode .city-card,
+body.dim-mode .detail-card,
+body.dim-mode .auth-card,
+body.dim-mode .filter-panel,
+body.dim-mode .place-skeleton,
+body.dim-mode .places-empty {
+  background: #121212;
+  border-color: #2a2a2a;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.45);
+}
+
+body.dim-mode .place-card:hover,
+body.dim-mode .city-card:hover,
+body.dim-mode .favorite-card:hover {
+  border-color: #3a3a3a;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.6);
+}
+
+
+/* =========================
+   CARD TEXT
+   ========================= */
+
+body.dim-mode .place-card h3,
+body.dim-mode .city-card-content h3,
+body.dim-mode .favorite-card .card-body h3,
+body.dim-mode .place-details-content h1,
+body.dim-mode .detail-body h1 {
+  color: #f5f5f5;
+}
+
+body.dim-mode .place-description,
+body.dim-mode .place-city,
+body.dim-mode .favorite-card .card-body .desc,
+body.dim-mode .city-card-content p {
+  color: #a0a0a0;
+}
+
+
+/* =========================
+   SEARCH
+   ========================= */
+
+body.dim-mode .places-search {
+  background: #121212;
+  border-color: #2a2a2a;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.5);
+}
+
+body.dim-mode .places-search input {
+  background: transparent;
+  color: #eeeeee;
+}
+
+body.dim-mode .places-search input::placeholder {
+  color: #777777;
+}
+
+body.dim-mode .clear-search {
+  background: #222222;
+  color: #aaaaaa;
+}
+
+
+/* =========================
+   FILTERS
+   ========================= */
+
+body.dim-mode .filter-grid input,
+body.dim-mode .filter-grid select,
+body.dim-mode .auth-card input {
+  background: #1c1c1c;
+  color: #eeeeee;
+  border-color: #333333;
+}
+
+body.dim-mode .filter-grid input::placeholder,
+body.dim-mode .auth-card input::placeholder {
+  color: #777777;
+}
+
+body.dim-mode .category-chip {
+  background: #121212;
+  border-color: #333333;
+  color: #cccccc;
+}
+
+body.dim-mode .category-chip:hover {
+  background: #202020;
+  border-color: #1677ff;
+  color: #1677ff;
+}
+
+body.dim-mode .category-chip.active {
+  background: #1677ff;
+  border-color: #1677ff;
+  color: #ffffff;
+}
+
+
+/* =========================
+   BUTTONS
+   ========================= */
+
+body.dim-mode .place-button,
+body.dim-mode .btn-primary,
+body.dim-mode .shared-button {
+  background: #1677ff;
+  color: #ffffff;
+}
+
+body.dim-mode .place-button:hover,
+body.dim-mode .btn-primary:hover,
+body.dim-mode .shared-button:hover {
+  background: #0d63dc;
+}
+
+body.dim-mode .btn-outline {
+  background: transparent;
+  border-color: #1677ff;
+  color: #1677ff;
+}
+
+body.dim-mode .btn-danger {
+  background: #f4212e;
+}
+
+
+/* =========================
+   DETAILS
+   ========================= */
+
+body.dim-mode .detail-info-grid > div {
+  background: #1a1a1a;
+}
+
+body.dim-mode .detail-info-grid strong {
+  color: #888888;
+}
+
+body.dim-mode .place-location {
+  color: #eeeeee;
+}
+
+
+/* =========================
+   EMPTY / ERROR
+   ========================= */
+
+body.dim-mode .empty h2 {
+  color: #eeeeee;
+}
+
+body.dim-mode .empty,
+body.dim-mode .loading {
+  color: #a0a0a0;
+}
+
+body.dim-mode .empty-icon {
+  background: #1c1c1c;
+}
+
+body.dim-mode .error-message {
+  background: #241416;
+  border-color: #5a252b;
+}
+
+body.dim-mode .error-message p {
+  color: #ff7b86;
+}
+
+body.dim-mode .places-empty h3 {
+  color: #eeeeee;
+}
+
+body.dim-mode .places-empty p {
+  color: #a0a0a0;
+}
+
+
+/* =========================
+   HOME
+   ========================= */
+
+body.dim-mode .home-section,
+body.dim-mode .home-why,
+body.dim-mode .home-cities,
+body.dim-mode .home-places,
+body.dim-mode .home-cta {
+  background: #000000;
+}
+
+body.dim-mode .home-section h2,
+body.dim-mode .home-section h3,
+body.dim-mode .home-why h2,
+body.dim-mode .home-cities h2,
+body.dim-mode .home-places h2,
+body.dim-mode .home-cta h2 {
+  color: #f5f5f5;
+}
+
+body.dim-mode .home-card,
+body.dim-mode .home-feature-card,
+body.dim-mode .home-city-card,
+body.dim-mode .home-place-card,
+body.dim-mode .home-story-card {
+  background: #121212;
+  border-color: #2a2a2a;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+}
+
+body.dim-mode .home-story-card > div,
+body.dim-mode .home-story-content {
+  background: #121212;
+}
+
+body.dim-mode .home-card p,
+body.dim-mode .home-feature-card p,
+body.dim-mode .home-city-card p,
+body.dim-mode .home-place-card p,
+body.dim-mode .home-story-card p {
+  color: #a0a0a0;
+}
+
+
+/* =========================
+   IMPORTANT
+   Images NEVER change
+   ========================= */
+
+body.dim-mode img {
+  filter: none !important;
+}
+
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media (max-width: 600px) {
+  .theme-toggle {
+    padding: 7px 10px;
+  }
+
+  .theme-toggle-text {
+    display: none;
+  }
+}
+/* =========================================================
+   FINAL DARK MODE OVERRIDES
+   Must stay at the very end of index.css
+   ========================================================= */
+
+/* ---------- Global ---------- */
+
+html:has(body.dim-mode),
+body.dim-mode,
+body.dim-mode #root {
+  background: #000000 !important;
+  color: #f5f5f5 !important;
+}
+
+
+/* ---------- Navbar ---------- */
+
+body.dim-mode .navbar {
+  background: #000000 !important;
+  border-bottom: 1px solid #2a2a2a !important;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.5) !important;
+}
+
+body.dim-mode .navbar .logo {
+  color: #1677ff !important;
+}
+
+body.dim-mode .navbar .nav-links a {
+  color: #d0d0d0 !important;
+}
+
+body.dim-mode .navbar .nav-links a:hover,
+body.dim-mode .navbar .nav-links a.active {
+  color: #1677ff !important;
+}
+
+body.dim-mode .navbar .nav-user {
+  color: #888888 !important;
+}
+
+body.dim-mode .navbar .nav-button {
+  color: #ff4d5a !important;
+}
+
+
+/* ---------- Home Page ---------- */
+
+body.dim-mode .home-page {
+  background: #000000 !important;
+  color: #f5f5f5 !important;
+}
+
+
+/* Hero */
+
+body.dim-mode .home-hero {
+  background-color: #000000 !important;
+}
+
+body.dim-mode .home-hero h1 {
+  color: #ffffff !important;
+}
+
+body.dim-mode .home-hero h1 span {
+  color: #1677ff !important;
+}
+
+body.dim-mode .home-hero-text {
+  color: rgba(255, 255, 255, 0.85) !important;
+}
+
+body.dim-mode .home-hero-note {
+  color: rgba(255, 255, 255, 0.75) !important;
+}
+
+
+/* ---------- Why Egypt ---------- */
+
+body.dim-mode .home-intro {
+  background: #000000 !important;
+}
+
+body.dim-mode .home-section-heading h2 {
+  color: #f5f5f5 !important;
+}
+
+body.dim-mode .home-section-heading > p:not(.home-eyebrow) {
+  color: #a0a0a0 !important;
+}
+
+
+/* Feature Cards */
+
+body.dim-mode .home-feature-card {
+  background: #121212 !important;
+  border-color: #2a2a2a !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45) !important;
+}
+
+body.dim-mode .home-feature-card h3 {
+  color: #f5f5f5 !important;
+}
+
+body.dim-mode .home-feature-card p {
+  color: #a0a0a0 !important;
+}
+
+
+/* ---------- Nile / Red Sea ---------- */
+
+body.dim-mode .home-image-story,
+body.dim-mode .home-red-sea {
+  background: #000000 !important;
+}
+
+body.dim-mode .home-story-content h2,
+body.dim-mode .home-red-sea-content h2 {
+  color: #ffffff !important;
+}
+
+body.dim-mode .home-story-content > p:not(.home-eyebrow),
+body.dim-mode .home-red-sea-content > p:not(.home-eyebrow) {
+  color: rgba(255, 255, 255, 0.88) !important;
+}
+
+
+/* ---------- Egypt Through Time ---------- */
+
+body.dim-mode .home-era-section {
+  background: #000000 !important;
+}
+
+body.dim-mode .home-era-card {
+  background: #121212 !important;
+  border-color: #2a2a2a !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45) !important;
+}
+
+body.dim-mode .home-era-content {
+  background: #121212 !important;
+}
+
+body.dim-mode .home-era-content h3 {
+  color: #f5f5f5 !important;
+}
+
+body.dim-mode .home-era-content p {
+  color: #a0a0a0 !important;
+}
+
+body.dim-mode .home-era-content > span {
+  color: #1677ff !important;
+}
+
+body.dim-mode .home-era-content a {
+  color: #1677ff !important;
+}
+
+
+/* ---------- Final CTA ---------- */
+
+body.dim-mode .home-final-cta {
+  background: #000000 !important;
+}
+
+body.dim-mode .home-final-cta h2 {
+  color: #ffffff !important;
+}
+
+body.dim-mode .home-final-cta > .container > p:not(.home-eyebrow) {
+  color: #a0a0a0 !important;
+}
+
+
+/* ---------- Other Pages ---------- */
+
+body.dim-mode .places-page,
+body.dim-mode .page-shell {
+  background: #000000 !important;
+}
+
+body.dim-mode .places-hero {
+  background: #000000 !important;
+}
+
+body.dim-mode .places-hero h1,
+body.dim-mode .places-header h2 {
+  color: #f5f5f5 !important;
+}
+
+
+/* ---------- Cards ---------- */
+
+body.dim-mode .place-card,
+body.dim-mode .favorite-card,
+body.dim-mode .city-card,
+body.dim-mode .detail-card,
+body.dim-mode .auth-card,
+body.dim-mode .filter-panel,
+body.dim-mode .places-empty {
+  background: #121212 !important;
+  border-color: #2a2a2a !important;
+}
+
+
+/* ---------- Card Text ---------- */
+
+body.dim-mode .place-card h3,
+body.dim-mode .favorite-card h3,
+body.dim-mode .city-card h3,
+body.dim-mode .detail-card h1,
+body.dim-mode .auth-card h1 {
+  color: #f5f5f5 !important;
+}
+
+body.dim-mode .place-description,
+body.dim-mode .place-city,
+body.dim-mode .favorite-card .desc,
+body.dim-mode .city-card-content p {
+  color: #a0a0a0 !important;
+}
+
+
+/* ---------- Inputs ---------- */
+
+body.dim-mode input,
+body.dim-mode select,
+body.dim-mode textarea {
+  background: #1c1c1c !important;
+  color: #eeeeee !important;
+  border-color: #333333 !important;
+}
+
+
+/* ---------- Images: DO NOT CHANGE ---------- */
+
+body.dim-mode img {
+  filter: none !important;
+}
+
+
+/* ---------- Mobile ---------- */
+
+@media (max-width: 600px) {
+  body.dim-mode .navbar {
+    background: #000000 !important;
+  }
+}

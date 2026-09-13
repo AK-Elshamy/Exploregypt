@@ -64,83 +64,113 @@ const citiesData = [
 
 const placesData = [
   {
-    name: "Qasr ElKbabgi",
+    name: "Giza Pyramids",
     city: "Cairo",
-    category: "Restaurant",
+    category: "Historical",
     description:
-      "A popular Egyptian restaurant serving traditional grilled meats and authentic Egyptian dishes.",
+      "One of the world's most famous ancient landmarks, home to the Great Pyramid and the Sphinx.",
     image:
-      "https://elkbabgi.com/assets/zayed-DdPnjuxS.jpg",
+      "https://images.unsplash.com/photo-1623674587543-9c7564de99d1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fEdpemElMjBQeXJhbWlkc3xlbnwwfHwwfHx8MA%3D%3D",
   },
 
   {
-    name: "Abo Tark",
+    name: "Historical",
     city: "Cairo",
-    category: "Restaurant",
+    category: "Historical",
     description:
-      "A popular Egyptian restaurant known for traditional Egyptian food and local dishes.",
+      "A glimpse into Egypt's rich historical heritage and ancient civilization.",
     image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrThkckCIU-JeBKks2CPHuhEWRz6HlQqNQtqEtEn-oXppKECfGUkftL4c&s=10",
+      "https://images.unsplash.com/photo-1629468855534-450d7c4c5f72?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGhpc3RvcmljYWwlMjBlZ3lwdHxlbnwwfHwwfHx8MA%3D%3D",
   },
 
   {
-    name: "Four Seasons Hotel Cairo at Nile Plaza",
+    name: "Egyptian Museum",
     city: "Cairo",
-    category: "Hotel",
+    category: "Museum",
     description:
-      "A luxury hotel overlooking the Nile in central Cairo, offering premium accommodation and services.",
+      "A world-famous museum housing an extensive collection of ancient Egyptian artifacts.",
     image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWo5SBfsa8fIs2qATHNUFU5j1GBsxg0jQ8XYywvFj2Jg&s=10",
+      "https://images.unsplash.com/photo-1631713215053-cc2df30dc6e9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8ZWd5cHRpYW4lMjBtdXNldW18ZW58MHx8MHx8fDA%3D",
   },
 
   {
-    name: "Marriott Mena House",
-    city: "Cairo",
-    category: "Hotel",
+    name: "Karnak Temple",
+    city: "Luxor",
+    category: "Historical",
     description:
-      "A historic luxury hotel in Cairo famous for its views of the Pyramids.",
+      "A magnificent ancient temple complex and one of the most important archaeological sites in Luxor.",
     image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ86GGxYE4v2aU9gdRhnDTrH5icFOCGAkHlJzKrhSYQew&s=10",
+      "https://plus.unsplash.com/premium_photo-1661906977668-ece2c96385c4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8S2FybmFrJTIwVGVtcGxlfGVufDB8fDB8fHww",
   },
 
   {
-    name: "City Stars Mall",
-    city: "Cairo",
-    category: "Shopping",
+    name: "Valley of the Kings",
+    city: "Luxor",
+    category: "Historical",
     description:
-      "One of Cairo's largest shopping and entertainment destinations with many stores, restaurants, and activities.",
+      "An ancient royal burial ground containing the tombs of many Egyptian pharaohs.",
     image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZyZWvAR8WX0zn7mnFni0poYXZCTYrUWbhJSbRq5yWSQ&s=10",
+      "https://plus.unsplash.com/premium_photo-1661963854938-e69a4e65c1e3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8VmFsbGV5JTIwb2YlMjB0aGUlMjBLaW5nc3xlbnwwfHwwfHx8MA%3D%3D",
   },
 
   {
-    name: "Mall of Egypt",
-    city: "Cairo",
-    category: "Shopping",
+    name: "Philae Temple",
+    city: "Aswan",
+    category: "Historical",
     description:
-      "A major shopping and entertainment mall in Cairo featuring international brands, restaurants, and entertainment.",
+      "A beautiful ancient temple complex located on an island in the Nile near Aswan.",
     image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwfzTv8GlpL1uOOTQQeiABSMFy0JlZ2HX4xjMpLXXcUQ&s=10",
+      "https://plus.unsplash.com/premium_photo-1697730234363-0746a37f04e1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8UGhpbGFlJTIwVGVtcGxlfGVufDB8fDB8fHww",
   },
 
   {
-    name: "Naama Bay",
-    city: "Sharm El-Sheikh",
-    category: "Beach",
+    name: "Nubian Village",
+    city: "Aswan",
+    category: "Other",
     description:
-      "A famous Red Sea destination known for its beaches, clear water, restaurants, and nightlife.",
+      "A colorful Nubian community offering visitors a chance to experience local culture and traditions.",
     image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4D9-YsnevVBZFSAQSG2gmHQDZ58UVBIofSXoAEmcN5A&s=10",
+      "https://images.unsplash.com/photo-1655754911750-6dcfba5d9bbf?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8TnViaWFuJTIwVmlsbGFnZXxlbnwwfHwwfHx8MA%3D%3D",
   },
 
   {
-    name: "Mahmya Beach",
+    name: "Hurghada Marina",
     city: "Hurghada",
+    category: "Entertainment",
+    description:
+      "A lively marina area with restaurants, cafes, shops, boats, and beautiful Red Sea views.",
+    image:
+      "https://plus.unsplash.com/premium_photo-1697729635844-0c97618e29f0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8SHVyZ2hhZGElMjBNYXJpbmF8ZW58MHx8MHx8fDA%3D",
+  },
+
+  {
+    name: "Giftun Island",
+    city: "Hurghada",
+    category: "Nature",
+    description:
+      "A beautiful Red Sea island famous for clear turquoise water, coral reefs, and beaches.",
+    image:
+      "https://plus.unsplash.com/premium_photo-1749590489877-b7ecefe164f7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8R2lmdHVuJTIwSXNsYW5kfGVufDB8fDB8fHww",
+  },
+
+  {
+    name: "Ras Mohammed National Park",
+    city: "Sharm El-Sheikh",
+    category: "Nature",
+    description:
+      "A world-famous protected area known for coral reefs, marine life, beaches, and diving.",
+    image:
+      "https://plus.unsplash.com/premium_photo-1694475417965-50bb1b5b9849?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8UmFzJTIwTW9oYW1tZWQlMjBOYXRpb25hbCUyMFBhcmt8ZW58MHx8MHx8fDA%3D",
+  },
+
+  {
+    name: "Dahab Lagoon",
+    city: "Dahab",
     category: "Beach",
     description:
-      "A beautiful Red Sea beach known for clear turquoise water, white sand, and relaxing surroundings.",
+      "A beautiful coastal area in Dahab known for its clear water and relaxing beach atmosphere.",
     image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShuDkuJfla15Z-bdwK3WUdzUA7Y98kK2UmjKa9o84i2g&s=10",
+      "https://images.unsplash.com/photo-1679066651965-aa7467867ebd?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8RGFoYWIlMjBMYWdvb258ZW58MHx8MHx8fDA%3D",
   },
 ];
 

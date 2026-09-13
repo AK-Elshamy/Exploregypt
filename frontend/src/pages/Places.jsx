@@ -4,10 +4,12 @@ import PlaceCard from '../components/PlaceCard';
 
 const CATEGORIES = [
   { value: '', label: 'All', icon: '✨' },
-  { value: 'Restaurant', label: 'Restaurants', icon: '🍴' },
-  { value: 'Hotel', label: 'Hotels', icon: '🏨' },
-  { value: 'Shopping', label: 'Shopping', icon: '🛍️' },
+  { value: 'Historical', label: 'Historical', icon: '🏛️' },
+  { value: 'Museum', label: 'Museums', icon: '🏺' },
+  { value: 'Nature', label: 'Nature', icon: '🌿' },
+  { value: 'Entertainment', label: 'Entertainment', icon: '🎭' },
   { value: 'Beach', label: 'Beaches', icon: '🏖️' },
+  { value: 'Other', label: 'Other', icon: '📍' },
 ];
 
 export default function Places() {
