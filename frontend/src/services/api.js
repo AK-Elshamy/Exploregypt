@@ -33,4 +33,9 @@ export const getPlaces = async (params = {}) => {
   return response.data;
 };
 
+export const getCities = async () => {
+  const response = await api.get('/cities');
+  return response.data;
+};
+
 export default api;
