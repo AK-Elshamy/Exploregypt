@@ -6,7 +6,7 @@ const City = require('../models/City');
 // @access  Public
 exports.getPlaces = async (req, res, next) => {
   try {
-    const { search, city, category, page = 1, limit = 12 } = req.query;
+    const { search, city, category, sort, page = 1, limit = 12 } = req.query;
     const query = {};
 
     if (search) {
@@ -32,11 +32,19 @@ exports.getPlaces = async (req, res, next) => {
       query.category = { $regex: new RegExp(`^${category}$`, 'i') };
     }
 
+    let sortOption = { rating: -1, name: 1 };
+
+    if (sort === 'name-asc') {
+      sortOption = { name: 1 };
+    } else if (sort === 'name-desc') {
+      sortOption = { name: -1 };
+    }
+
     const skip = (parseInt(page) - 1) * parseInt(limit);
 
     const places = await Place.find(query)
       .populate('city', 'name region')
-      .sort({ rating: -1, name: 1 })
+      .sort(sortOption)
       .skip(skip)
       .limit(parseInt(limit));
 
