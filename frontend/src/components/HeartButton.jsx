@@ -10,10 +10,18 @@ export default function HeartButton({ placeId }) {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    if (!isAuthenticated || !placeId) return;
-    getFavorites()
-      .then((favorites) => setIsFavorite(favorites.some((fav) => (fav.placeId?._id || fav.placeId) === placeId)))
-      .catch(() => {});
+    const fetchFavorites = async () => {
+      if (!isAuthenticated || !placeId) return;
+
+      try {
+        const favorites = await getFavorites();
+        setIsFavorite(favorites.some((fav) => (fav.placeId?._id || fav.placeId) === placeId));
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchFavorites();
   }, [isAuthenticated, placeId]);
 
   const handleToggle = async (event) => {
