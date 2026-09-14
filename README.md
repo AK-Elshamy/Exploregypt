@@ -646,6 +646,7 @@ placeId
 | **Abdelrahman Adel Hamdy**    | Favorites                       |
 | **Youssef Waleed Abdelkader** | ASK / Travel Information        |
 | **Ahmed Samy Zaki**           | Admin Dashboard & Authorization |
+| **Abdelrahman Ahmed Hamza**   | Frontend UI & Reusable Components |
 
 > Each team member is responsible for understanding, implementing, testing, and contributing to their assigned part of the project. Contributions are tracked through Git and GitHub.
 
