@@ -30,18 +30,24 @@ function Navbar() {
 
   return (
     <nav className="navbar">
-      <Link to="/" className="logo">Exploregypt</Link>
+      <Link to="/" className="logo">
+        Exploregypt
+      </Link>
 
       <div className="nav-links">
         <NavLink to="/">Home</NavLink>
         <NavLink to="/cities">Cities</NavLink>
         <NavLink to="/places">Places</NavLink>
+        <NavLink to="/ask">Ask</NavLink>
 
-        {isAuthenticated && <NavLink to="/favorites">Favorites</NavLink>}
+        {isAuthenticated && (
+          <NavLink to="/favorites">Favorites</NavLink>
+        )}
 
         {isAuthenticated ? (
           <>
             <span className="nav-user">Hi, {user?.name}</span>
+
             <button className="nav-button" onClick={handleLogout}>
               Logout
             </button>
@@ -57,12 +63,15 @@ function Navbar() {
           type="button"
           className="theme-toggle"
           onClick={toggleTheme}
-          aria-label={isDimMode ? 'Switch to light mode' : 'Switch to dim mode'}
+          aria-label={
+            isDimMode ? 'Switch to light mode' : 'Switch to dim mode'
+          }
           title={isDimMode ? 'Light mode' : 'Dim mode'}
         >
           <span className="theme-toggle-icon">
             {isDimMode ? '☀️' : '🌙'}
           </span>
+
           <span className="theme-toggle-text">
             {isDimMode ? 'Light' : 'Dim'}
           </span>

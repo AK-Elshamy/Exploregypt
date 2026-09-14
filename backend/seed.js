@@ -63,6 +63,65 @@ const citiesData = [
 ];
 
 const placesData = [
+    {
+    name: "Qasr ElKbabgi",
+    city: "Cairo",
+    category: "Restaurant",
+    description:
+      "A popular Egyptian restaurant serving traditional grilled meats and authentic Egyptian dishes.",
+    image:
+      "https://elkbabgi.com/assets/zayed-DdPnjuxS.jpg",
+  },
+
+  {
+    name: "Abo Tark",
+    city: "Cairo",
+    category: "Restaurant",
+    description:
+      "A popular Egyptian restaurant known for traditional Egyptian food and local dishes.",
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrThkckCIU-JeBKks2CPHuhEWRz6HlQqNQtqEtEn-oXppKECfGUkftL4c&s=10",
+  },
+
+  {
+    name: "Four Seasons Hotel Cairo at Nile Plaza",
+    city: "Cairo",
+    category: "Hotel",
+    description:
+      "A luxury hotel overlooking the Nile in central Cairo, offering premium accommodation and services.",
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWo5SBfsa8fIs2qATHNUFU5j1GBsxg0jQ8XYywvFj2Jg&s=10",
+  },
+
+  {
+    name: "Marriott Mena House",
+    city: "Cairo",
+    category: "Hotel",
+    description:
+      "A historic luxury hotel in Cairo famous for its views of the Pyramids.",
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ86GGxYE4v2aU9gdRhnDTrH5icFOCGAkHlJzKrhSYQew&s=10",
+  },
+
+  {
+    name: "City Stars Mall",
+    city: "Cairo",
+    category: "Shopping",
+    description:
+      "One of Cairo's largest shopping and entertainment destinations with many stores, restaurants, and activities.",
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZyZWvAR8WX0zn7mnFni0poYXZCTYrUWbhJSbRq5yWSQ&s=10",
+  },
+
+  {
+    name: "Mall of Egypt",
+    city: "Cairo",
+    category: "Shopping",
+    description:
+      "A major shopping and entertainment mall in Cairo featuring international brands, restaurants, and entertainment.",
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwfzTv8GlpL1uOOTQQeiABSMFy0JlZ2HX4xjMpLXXcUQ&s=10",
+  },
   {
     name: "Giza Pyramids",
     city: "Cairo",

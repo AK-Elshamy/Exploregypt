@@ -2537,3 +2537,395 @@ body.dim-mode img {
     background: #000000 !important;
   }
 }
+
+/* =========================================================
+   ASK PAGE — STATIC Q&A / TRAVEL GUIDE
+   ========================================================= */
+
+.ask-page {
+  min-height: 100vh;
+  background: var(--eg-bg);
+  text-align: left;
+}
+
+/* =========================
+   HERO
+   ========================= */
+
+.ask-hero {
+  padding: 85px 20px 95px;
+  text-align: center;
+  background:
+    radial-gradient(
+      circle at 10% 20%,
+      rgba(22, 119, 255, 0.10),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 90% 30%,
+      rgba(201, 154, 61, 0.10),
+      transparent 32%
+    ),
+    linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+}
+
+.ask-hero .container {
+  max-width: 850px;
+}
+
+.ask-hero .home-eyebrow {
+  color: #1677ff !important;
+  margin-bottom: 18px;
+}
+
+.ask-hero h1 {
+  margin: 0;
+  color: #172033;
+  font-size: clamp(40px, 6vw, 64px);
+  line-height: 1.05;
+  font-weight: 800;
+  letter-spacing: -2px;
+}
+
+.ask-hero > .container > p:last-child {
+  max-width: 650px;
+  margin: 22px auto 0;
+  color: #667085 !important;
+  font-size: 17px !important;
+  line-height: 1.75;
+}
+
+/* =========================
+   SHARED SECTION
+   ========================= */
+
+.ask-section,
+.ask-tips-section {
+  padding: 90px 20px;
+}
+
+.ask-section .container,
+.ask-tips-section .container,
+.ask-warning-section .container {
+  max-width: 1100px;
+}
+
+.ask-section-heading {
+  max-width: 720px;
+  margin: 0 auto 45px;
+  text-align: center;
+}
+
+.ask-section-heading .home-eyebrow {
+  margin-bottom: 14px;
+}
+
+.ask-section-heading h2 {
+  margin: 0;
+  color: #172033;
+  font-size: clamp(30px, 4vw, 44px);
+  line-height: 1.1;
+  letter-spacing: -1px;
+}
+
+.ask-section-heading > p:not(.home-eyebrow) {
+  margin: 16px auto 0;
+  color: #667085 !important;
+  font-size: 16px !important;
+  line-height: 1.7;
+}
+
+/* =========================
+   FAQ
+   ========================= */
+
+.ask-faq-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.ask-faq-card {
+  padding: 26px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(23, 32, 51, 0.06);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.ask-faq-card:hover {
+  transform: translateY(-4px);
+  border-color: #cfe1ff;
+  box-shadow: 0 15px 35px rgba(23, 32, 51, 0.10);
+}
+
+.ask-faq-card h3 {
+  margin: 0 0 12px;
+  color: #172033;
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+.ask-faq-card p {
+  margin: 0;
+  color: #667085 !important;
+  font-size: 14px !important;
+  line-height: 1.75;
+}
+
+/* =========================
+   WARNINGS
+   ========================= */
+
+.ask-warning-section {
+  padding: 90px 20px;
+  background:
+    linear-gradient(
+      135deg,
+      #172033 0%,
+      #202d45 100%
+    );
+}
+
+.ask-warning-section .ask-section-heading h2 {
+  color: #ffffff;
+}
+
+.ask-warning-section .ask-section-heading
+  > p:not(.home-eyebrow) {
+  color: rgba(255, 255, 255, 0.72) !important;
+}
+
+.ask-warning-section .home-eyebrow {
+  color: #8fc3ff !important;
+}
+
+.ask-warning-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.ask-warning-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  padding: 22px;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.ask-warning-card:hover {
+  background: rgba(255, 255, 255, 0.10);
+  transform: translateY(-3px);
+}
+
+.ask-warning-card > span {
+  flex-shrink: 0;
+  font-size: 24px;
+  line-height: 1;
+}
+
+.ask-warning-card p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.88) !important;
+  font-size: 14px !important;
+  line-height: 1.7;
+}
+
+/* =========================
+   TRAVEL TIPS
+   ========================= */
+
+.ask-tips-section {
+  background: #f3f6fa;
+}
+
+.ask-tips-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.ask-tip-card {
+  padding: 28px 22px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(23, 32, 51, 0.06);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.ask-tip-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 35px rgba(23, 32, 51, 0.10);
+}
+
+.ask-tip-icon {
+  width: 54px;
+  height: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  background: #eef5ff;
+  border-radius: 14px;
+  font-size: 24px;
+}
+
+.ask-tip-card h3 {
+  margin: 0 0 9px;
+  color: #172033;
+  font-size: 18px;
+}
+
+.ask-tip-card p {
+  margin: 0;
+  color: #667085 !important;
+  font-size: 14px !important;
+  line-height: 1.7;
+}
+
+/* =========================
+   DARK MODE
+   ========================= */
+
+body.dim-mode .ask-page {
+  background: #000000;
+}
+
+body.dim-mode .ask-hero {
+  background: #000000;
+}
+
+body.dim-mode .ask-hero h1 {
+  color: #ffffff;
+}
+
+body.dim-mode .ask-hero > .container > p:last-child {
+  color: #a0a0a0 !important;
+}
+
+body.dim-mode .ask-section,
+body.dim-mode .ask-tips-section {
+  background: #000000;
+}
+
+body.dim-mode .ask-section-heading h2 {
+  color: #ffffff;
+}
+
+body.dim-mode .ask-section-heading
+  > p:not(.home-eyebrow) {
+  color: #a0a0a0 !important;
+}
+
+body.dim-mode .ask-faq-card {
+  background: #0d0d0d;
+  border-color: #292929;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+}
+
+body.dim-mode .ask-faq-card:hover {
+  border-color: #1677ff;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7);
+}
+
+body.dim-mode .ask-faq-card h3 {
+  color: #ffffff;
+}
+
+body.dim-mode .ask-faq-card p {
+  color: #a0a0a0 !important;
+}
+
+body.dim-mode .ask-warning-section {
+  background: #080808;
+}
+
+body.dim-mode .ask-tips-section {
+  background: #000000;
+}
+
+body.dim-mode .ask-tip-card {
+  background: #0d0d0d;
+  border-color: #292929;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+}
+
+body.dim-mode .ask-tip-card h3 {
+  color: #ffffff;
+}
+
+body.dim-mode .ask-tip-card p {
+  color: #a0a0a0 !important;
+}
+
+body.dim-mode .ask-tip-icon {
+  background: #151515;
+}
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+@media (max-width: 900px) {
+  .ask-faq-list {
+    grid-template-columns: 1fr;
+  }
+
+  .ask-warning-list {
+    grid-template-columns: 1fr;
+  }
+
+  .ask-tips-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .ask-hero {
+    padding: 60px 16px 70px;
+  }
+
+  .ask-hero h1 {
+    font-size: 40px;
+    letter-spacing: -1.5px;
+  }
+
+  .ask-hero > .container > p:last-child {
+    font-size: 15px !important;
+  }
+
+  .ask-section,
+  .ask-tips-section,
+  .ask-warning-section {
+    padding: 65px 16px;
+  }
+
+  .ask-section-heading {
+    margin-bottom: 32px;
+  }
+
+  .ask-faq-card {
+    padding: 22px;
+  }
+
+  .ask-tips-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ask-warning-card {
+    padding: 19px;
+  }
+}

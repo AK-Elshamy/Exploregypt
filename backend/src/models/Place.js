@@ -18,8 +18,18 @@ const placeSchema = new mongoose.Schema(
     },
     category: {
       type: String,
-      enum: ['Historical', 'Museum', 'Beach', 'Nature', 'Religious', 'Entertainment', 'Shopping', 'Other'],
-      default: 'Other',
+enum: [
+  'Historical',
+  'Museum',
+  'Beach',
+  'Nature',
+  'Religious',
+  'Entertainment',
+  'Shopping',
+  'Restaurant',
+  'Hotel',
+  'Other'
+],      default: 'Other',
     },
     image: {
       type: String,

@@ -9,6 +9,9 @@ const CATEGORIES = [
   { value: 'Nature', label: 'Nature', icon: '🌿' },
   { value: 'Entertainment', label: 'Entertainment', icon: '🎭' },
   { value: 'Beach', label: 'Beaches', icon: '🏖️' },
+  { value: 'Restaurant', label: 'Restaurants', icon: '🍽️' },
+  { value: 'Hotel', label: 'Hotels', icon: '🏨' },
+  { value: 'Shopping', label: 'Shopping', icon: '🛍️' },
   { value: 'Other', label: 'Other', icon: '📍' },
 ];
 
@@ -50,6 +53,10 @@ export default function Places() {
 
     return () => clearTimeout(timer);
   }, [search, category]);
+
+  const selectedCategory = CATEGORIES.find(
+    (item) => item.value === category
+  );
 
   return (
     <main className="places-page">
@@ -117,7 +124,7 @@ export default function Places() {
               <div>
                 <h2>
                   {category
-                    ? `${category}s`
+                    ? selectedCategory?.label
                     : 'All Places'}
                 </h2>
 
@@ -175,7 +182,6 @@ export default function Places() {
 
         </div>
       </section>
-
     </main>
   );
 }

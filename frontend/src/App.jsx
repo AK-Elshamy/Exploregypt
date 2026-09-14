@@ -6,6 +6,7 @@ import CityDetail from './pages/CityDetail';
 import Places from './pages/Places';
 import PlaceDetail from './pages/PlaceDetail';
 import Favorites from './pages/Favorites';
+import Ask from './pages/Ask';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import { AuthProvider } from './context/AuthContext';
@@ -54,7 +55,10 @@ function Home() {
           </p>
 
           <div className="home-hero-actions">
-            <button className="home-btn home-btn-primary" onClick={scrollToJourney}>
+            <button
+              className="home-btn home-btn-primary"
+              onClick={scrollToJourney}
+            >
               Start Exploring
               <span>→</span>
             </button>
@@ -133,7 +137,9 @@ function Home() {
       <section className="home-era-section">
         <div className="container">
           <div className="home-section-heading">
-            <p className="home-eyebrow home-eyebrow-dark">EGYPT THROUGH TIME</p>
+            <p className="home-eyebrow home-eyebrow-dark">
+              EGYPT THROUGH TIME
+            </p>
             <h2>From ancient wonders to a modern future.</h2>
             <p>
               Egypt is not only about what happened thousands of years ago.
@@ -143,7 +149,10 @@ function Home() {
 
           <div className="home-era-grid">
             <article className="home-era-card">
-              <img src={ANCIENT_IMAGE} alt="Ancient Egyptian landmark" />
+              <img
+                src={ANCIENT_IMAGE}
+                alt="Ancient Egyptian landmark"
+              />
               <div className="home-era-content">
                 <span>THEN</span>
                 <h3>Thousands of years of history</h3>
@@ -192,7 +201,9 @@ function Home() {
 
       <section className="home-final-cta">
         <div className="container">
-          <p className="home-eyebrow home-eyebrow-dark">YOUR JOURNEY STARTS HERE</p>
+          <p className="home-eyebrow home-eyebrow-dark">
+            YOUR JOURNEY STARTS HERE
+          </p>
           <h2>Ready to discover Egypt?</h2>
           <p>
             Choose a city, find a place, and start building your own Egyptian
@@ -218,15 +229,23 @@ function App() {
     <AuthProvider>
       <BrowserRouter>
         <Navbar />
+
         <Routes>
           <Route path="/" element={<Home />} />
+
           <Route path="/cities" element={<Cities />} />
           <Route path="/cities/:id" element={<CityDetail />} />
+
           <Route path="/places" element={<Places />} />
           <Route path="/places/:id" element={<PlaceDetail />} />
+
+          <Route path="/ask" element={<Ask />} />
+
           <Route path="/favorites" element={<Favorites />} />
+
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </BrowserRouter>
